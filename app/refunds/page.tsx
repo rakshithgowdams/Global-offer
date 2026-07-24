@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import LegalPage, { LegalSection } from "../components/LegalPage";
+import { createPageMetadata } from "../lib/seo";
 
-export const metadata: Metadata = { title: "Refund Policy", description: "Cancellations, refunds, credits and remedies for MyDesignNexus custom technology services." };
+export const metadata: Metadata = createPageMetadata({
+  title: "Refund Policy",
+  description:
+    "Cancellations, refunds, credits and remedies for MyDesignNexus custom technology services.",
+  path: "/refunds",
+});
 const nav = [["principle","Policy principle"],["discovery","Discovery & deposits"],["projects","Custom projects"],["recurring","Recurring services"],["third","Third-party costs"],["issues","Service issues"],["cancel","How to cancel"],["processing","Processing"],["contact","Request review"]].map(([id,label])=>({id,label}));
 
 export default function Refunds() {

@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import LegalPage, { LegalSection } from "../components/LegalPage";
+import { createPageMetadata } from "../lib/seo";
 
-export const metadata: Metadata = { title: "Privacy Policy", description: "How MyDesignNexus collects, uses and protects information for MDN PropertyFlow enquiries and services." };
+export const metadata: Metadata = createPageMetadata({
+  title: "Privacy Policy",
+  description:
+    "How MyDesignNexus collects, uses and protects information for MDN PropertyFlow enquiries and services.",
+  path: "/privacy",
+});
 const nav = [
   ["scope","Scope & identity"],["collect","Information we collect"],["use","How we use it"],["ai","AI communications"],
   ["sharing","Sharing & processors"],["transfers","International transfers"],["security","Retention & security"],

@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import LegalPage, { LegalSection } from "../components/LegalPage";
+import { createPageMetadata } from "../lib/seo";
 
-export const metadata: Metadata = { title: "Terms & Conditions", description: "Terms governing the MyDesignNexus website and MDN PropertyFlow business services." };
+export const metadata: Metadata = createPageMetadata({
+  title: "Terms & Conditions",
+  description:
+    "Terms governing the MyDesignNexus website and MDN PropertyFlow business services.",
+  path: "/terms",
+});
 const nav = [["agreement","Agreement"],["services","Services & scope"],["client","Client responsibilities"],["ai","AI & real-estate limits"],["fees","Fees & costs"],["ip","Intellectual property"],["data","Data & confidentiality"],["liability","Warranties & liability"],["termination","Termination"],["law","Law & contact"]].map(([id,label])=>({id,label}));
 
 export default function Terms() {
